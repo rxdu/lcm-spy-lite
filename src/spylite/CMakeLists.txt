@@ -12,7 +12,7 @@ set(SPYLITE_LIB_SRC
 	timeutil.c
 )
 add_library(spylite STATIC ${SPYLITE_LIB_SRC})
-target_link_libraries(spylite ${CMAKE_THREAD_LIBS_INIT} ${LCM_LIBRARIES} ${GLIB2_LIBRARIES} -ldl)
+target_link_libraries(spylite  -lpthread -ldl ${LCM_LIBRARIES} ${GLIB2_LIBRARIES})
 target_include_directories(spylite PUBLIC
 	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
 	$<INSTALL_INTERFACE:include>)
