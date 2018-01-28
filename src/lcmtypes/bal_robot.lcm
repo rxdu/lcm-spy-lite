@@ -1,0 +1,28 @@
+package librav_lcm_msgs;
+
+// IMU raw data
+struct BalRawIMU_t
+{
+    int64_t mtime;
+    float gyro[3];
+    float accel[3];
+    float magn[3];
+} 
+
+struct BalRawSpeed_t
+{
+    int64_t mtime;
+    int32_t count_left;
+    float speed_left;
+    int32_t count_right;
+    float speed_right;
+} 
+
+// command range: [-1,1]
+struct BalCommand_t
+{
+    boolean update_left;
+    boolean update_right;
+    float motor_left;
+    float motor_right;
+} 
